@@ -86,7 +86,7 @@ body {
 .header-container,
 .footer-container,
 .main aside {
-    background: #f16529;
+    background: #000;
 }
 
 .title {
@@ -247,7 +247,7 @@ nav a:hover {
     }
 
     .main aside {
-        float: right;
+        float: center;
         width: 28%;
     }
 }
