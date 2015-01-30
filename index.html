@@ -7,110 +7,15 @@
 <!-- custom -->
 <link href="assets/style.css" rel="stylesheet" media="screen">
 
-<script>
-function profile_parallax_scroll(cover_bg) {
-  $(window).scroll(function() {
-      var yPos = ($(window).scrollTop() / cover_bg.data('speed')) - 40;
-      // Put together our final background position
-      var coords = '50% '+ yPos + 'px';
-      // Move the background
-      cover_bg.css({ backgroundPosition: coords });
-  });
-}
-$(document).ready(function(){
-    profile_parallax_scroll( $('.cover') );
-});
-</script>
 
-<div class="navbar navbar-static-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="brand" href="#">Site Name</a>
-      <ul class="nav">
-        <li><a href="#">Profile</a></li>
-      </ul>
-      <div class="pull-right">
-        <ul class="nav">
-          <li><a href="/logout">Log Out</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+<section id="home" data-type="background" data-speed="10" class="pages">     
+         <article>I am absolute positioned</article>
+    </section>   
+     
+<section id="about" data-type="background" data-speed="10" class="pages">
+         <article>Simple Parallax Scroll</article>
+</section>
 
-<div id="macro_data" data-userId="{{ user_id }}"></div>
 
-<div class="profile">
-  <div class="cover" data-type="background" data-speed="2" style="background-image: url(./static/images/cover.jpg);">
-    <div class="user-stats-wrapper">
-      <div class="user-stats">
-        <div class="user-stats-number">10</div>
-        Follower
-      </div>
-      <div class="user-stats">
-        <div class="user-stats-number">14</div>
-        Following
-      </div>
-      <div class="user-stats">
-        <div class="user-stats-number">7</div>
-        Post
-      </div>
-    </div>
-    <div class="profile-pic">
-      <img src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-prn1/c42.184.527.527/s160x160/644205_10151344237867608_1574858343_n.jpg">
-    </div>
-  </div>
 
-  <div class="user-info">
-    <div class="btn btn-primary follow-button">Follow</div>
-    <h4>Keven Wang</h4><p class="muted">sky-walker</p>
-  </div>
-
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-  <p>placeholder</p>
-
-</div>
 </html>
