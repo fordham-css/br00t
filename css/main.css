@@ -75,12 +75,10 @@ body {
    =================== */
 
 .header-container {
-    border-bottom: 20px solid #e44d26;
 }
 
 .footer-container,
 .main aside {
-    border-top: 20px solid #e44d26;
 }
 
 .header-container,
@@ -248,6 +246,7 @@ nav a:hover {
 
     .main aside {
         float: center;
+        margin:50px auto 0px auto;
         width: 28%;
     }
 }
