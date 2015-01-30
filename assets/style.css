@@ -1,3 +1,7 @@
+html {
+  color:#fff;
+}
+
 #home { 
   background: #000; min-height: 1000px; 
   height: 1000px; 
