@@ -1,1 +1,102 @@
-x
+body {
+	background-color: whiteSmoke;
+}
+
+.profile {
+	margin-left: auto;
+	margin-right: auto;
+	width: 850px;
+}
+
+.profile .cover {
+	position: relative;
+	height: 400px;
+	width: 850px;
+	/* margin-top: 30px; */
+	/* border: 1px solid black;
+	border-top: none; */
+	border-radius: 4px 4px 0 0;
+	background-repeat:no-repeat;
+	background-position: 50% -40px;
+	background-size: 100%;
+	box-shadow: 0 1px 10px #A6A6A4;
+}
+
+.cover .user-stats-wrapper {
+	position: absolute;
+	right: 30px;
+	bottom: 25px;
+	width: 320px;
+}
+
+.user-stats-wrapper .user-stats {
+	height: 40px;
+	width: 60px;
+	display: inline-block;
+	padding: 10px 15px 10px 15px;
+	margin-right: 6px;
+	border-radius: 8px;
+	background-color: #101010;
+	opacity: 0.6;
+	/* font-weight: bold; */
+	text-align: center;
+	vertical-align: middle;
+	color: white;
+}
+
+.user-stats .user-stats-number {
+	font-size: 17.5px;
+	font-weight: bold;
+}
+
+.cover .profile-pic {
+	position: absolute;
+	left:30px;
+	bottom: -30px;
+	width: 100px;
+	height: 100px;
+	border-radius: 8px;
+	/* border: 1px solid #7C7C7C; */
+	box-shadow: 0 2px 8px #333333;
+	z-index: 5;
+}
+
+.profile-pic img {
+	border-radius: 8px;
+}
+
+.profile .user-info {
+	position: relative;
+	width: 660px;
+	height: 60px;
+	padding: 10px 30px 20px 160px;
+	border-radius: 0 0 4px 4px;
+	box-shadow: 0 1px 10px #A6A6A4;
+}
+
+.user-info .follow-button {
+	position: absolute;
+	top: 40px;
+	left: 30px;
+	width: 74px;
+}
+
+.profile .profile-column {
+	width: 50%;
+	float: left;
+	display: inline-block;
+}
+
+.profile-column .post {
+	width: 400px;
+}
+
+.profile-column .post .post-img {
+	width: 400px;
+	height: 400px;
+}
+
+.profile-column .post .post-play {
+	top: 375px;
+	left: 150px;
+}
