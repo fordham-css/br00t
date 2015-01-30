@@ -3,7 +3,7 @@ MAIN STYLE
 *******************************************************************************************************************************/
 body {
   background-color: #f2f2f2;
-    font-family: "Lato";
+    font-family: "Quantico";
     font-weight: 300;
     font-size: 16px;
     color: #555;
@@ -14,7 +14,7 @@ body {
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Raleway";
+    font-family: "Quantico";
     font-weight: 300;
     color: #333;
 }
@@ -25,7 +25,7 @@ h4 {
 }
 
 h1, h2, h3 {
-    font-family: 'Raleway',sans-serif;
+    font-family: 'Quantico',sans-serif;
     margin-top: 30px;
     font-weight: 100;
     text-transform: uppercase;
@@ -65,7 +65,7 @@ HEADER
     font-size: 48px;
     margin-top: 5px;
     margin-bottom: 0px;
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Quantico","Helvetica Neue",Helvetica,Arial,sans-serif;
     color: white;
 }
 .timer_box p{ margin-top: 0px;}
