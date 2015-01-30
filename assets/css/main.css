@@ -157,7 +157,7 @@ input {
 
 label {
 	font-weight: 500;
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Quantico', sans-serif;
 }
 
 input[type="submit"] {
@@ -548,7 +548,7 @@ input[type="submit"] {
 	}
 	
 .popular-posts li em {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Quantico', sans-serif;
 	font-size: 12px;
 	}
 
