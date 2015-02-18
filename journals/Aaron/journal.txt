@@ -14,3 +14,6 @@ If you decide to write your journal entry in upload.txt, keep in mind that you d
 
 Just begin typing your entry, and the formatting program will do the rest!
 
+2015-02-16 at 11-01-27
+Created everyone's journals. Hopefully everyone can get the hang og Git; I'm afraid my primer was too brief and too bad!
+
