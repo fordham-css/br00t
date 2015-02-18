@@ -17,9 +17,12 @@ import itertools
 #for k in b:
 #	print k
 
+#########################################################################
 
 def main():
 	list = 'abcdefghijklmnopqrstuvwxyz'
+	list1 = 'abcdefghijklmnopqrstuvwxyz1234567890'
+	LIST = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'
 	result = []				
 	number = 8     #input("What is the maximum passwords length? ")
 	if type(number) != int:
@@ -28,11 +31,9 @@ def main():
 	else:
 		for i in range(number+1):
 			for k in itertools.combinations_with_replacement(list,r=i):
-#			z = (itertools.combinations('abcd',r=i))
 				print(''.join(k))
-#		for j in result:
-#			print ' '.join(j)
 
+#########################################################################
 
 if __name__ == '__main__':
 	main()
