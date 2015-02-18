@@ -17,3 +17,12 @@ Just begin typing your entry, and the formatting program will do the rest!
 2015-02-16 at 11-01-27
 Created everyone's journals. Hopefully everyone can get the hang og Git; I'm afraid my primer was too brief and too bad!
 
+2015-02-18 at 12-33-38
+We had a good session yesterday! It was a bit more comfortable this time around. We met in the CSS club office in McGinley rather than the library. Elana and Nicole stayed at LC, and I’ll be catching them up on things later. We spent most of the day server mapping, planning out the approach the server will take to crack passwords. The first item we decided upon was the attack vector the server will conduct. Rather than having the br00t control server be the one conducting the SSH connections, we will have the client machines make the SSH connections to the victim computer. This way we will have a faster streaming queue attacking the victim computer.
+
+However, we did discover we’re going to be working with a lot more numbers than we thought. While we were making headway on the cracking algorithm we realized that we’re not dealing with a combination function (nCr) because it does not account for possibility that a password can use the same character multiple times.
+
+On Slack Matt’s work on the algorithm apparent produced  “217,180,147,158 lines, equating to 1.728 TB.”
+
+Yikes :3
+
