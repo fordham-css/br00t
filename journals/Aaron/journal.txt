@@ -26,3 +26,9 @@ On Slack Matt’s work on the algorithm apparent produced  “217,180,147,158 li
 
 Yikes :3
 
+2015-02-24 at 12-08-18
+Uploaded the architecture for the flask server.
+
+2015-02-24 at 12-08-50
+Very basic; the server can be launched from app.py, which contains the server-side code. the rest are static or template files associated with providing the index.html page and such.
+
