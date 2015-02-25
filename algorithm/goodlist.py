@@ -9,7 +9,7 @@ def main():
         LIST = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890'
         result = []
         number = 8     #input("What is the maximum passwords length? ")
-        for zz in range(number+1):
+        for zz in range(5,9):
                 for zzz in itertools.product(list1,repeat=zz):
                         print(''.join(zzz))
 

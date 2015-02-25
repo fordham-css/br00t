@@ -1,0 +1,22 @@
+2015-02-16 at 09-41-02
+INITIATING PERSONAL RESEARCH JOURNAL
+FCRH UNDERGRADTUATE RESEARCH
+COMPUTING SCIENCES SOCIETY
+PROJECT: br00t
+
+Please use the program manager.py to auto-format your entries.
+Run it by typing this script: python manager.py
+You will be given two options.
+First, you can type your entry in the command line.
+Second, you can upload the contents of the file upload.txt
+
+If you decide to write your journal entry in upload.txt, keep in mind that you do not need to format the spacing, and you do no need to enter the date or time.
+
+Just begin typing your entry, and the formatting program will do the rest!
+
+2015-02-24 at 21-08-52
+This is my first Journal entry. I got a journal late because Aaron forgot to make one for me, but I'm not salty.
+
+2015-02-24 at 21-09-49
+I am really looking forward to working on the server side on this project. I think it is vaery interesting, and it seems like somethink that has not been done before.
+
