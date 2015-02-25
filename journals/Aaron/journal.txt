@@ -32,3 +32,6 @@ Uploaded the architecture for the flask server.
 2015-02-24 at 12-08-50
 Very basic; the server can be launched from app.py, which contains the server-side code. the rest are static or template files associated with providing the index.html page and such.
 
+2015-02-24 at 21-05-21
+Fast work today. Programming a couple of different attacks, but we ended up with a clutch rendition of a SSH attacker that generates the product of goodlist and tries it up against a dummy server we made on Digital Ocean. Neat!
+
