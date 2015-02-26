@@ -68,9 +68,9 @@ def attempt(IP,UserName,Password):
 	return
 
 def main():
-
-	user = sys.argv[1]
-	ip = sys.argv[2]
+	if len(sys.argv) >= 3:
+		user = sys.argv[1]
+		ip = sys.argv[2]
 
 	if len(sys.argv) == 3:
 		t1 = threading.Thread(target = brute_gen())
@@ -87,7 +87,7 @@ def main():
 		for i in dictionary.readlines():
 			t2 = threading.Thread(target=attempt(ip, user, i.strip()))
 
-	else:
+	elif len(sys.argv) < 3:
 		print "\nUsage: %s Username Hostname /path/to/dictionary" % (str(sys.argv[0]))
                 print "\nIf no dictionary file is given, a brute-force attack will be run."
                 print "\nExample: %s root 10.0.0.1 ~/dict.txt\n" % (str(sys.argv[0]))
