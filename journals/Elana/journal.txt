@@ -14,3 +14,9 @@ If you decide to write your journal entry in upload.txt, keep in mind that you d
 
 Just begin typing your entry, and the formatting program will do the rest!
 
+2015-02-24 at 21-02-11
+this is super cool wow 
+
+2015-02-24 at 21-02-50
+so today i set up flask and installed pip and paramiko and i have a lot of catching up to do
+
