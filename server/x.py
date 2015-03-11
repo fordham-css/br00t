@@ -13,7 +13,7 @@ def make_celery(app):
     return celery
 
 from flask import Flask
-
+ 
 app = Flask(__name__)
 app.config.update(
     CELERY_BROKER_URL='redis://localhost:6379',
@@ -23,13 +23,13 @@ celery = make_celery(app)
 
 
 @celery.task()
-def add_together(a, b):
+def payload(a, b):
     return a + b
 
 @app.route("/")
 def index():
-    result = payload.delay()
-    result.wait()
+    result = payload(4,5)
+    #result
     return render_template("index.html")
 
 

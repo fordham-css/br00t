@@ -26,9 +26,9 @@ def page_not_found(error):
 
 @app.route("/")
 def index():
-	result = payload.delay()
-	result.wait()
+	result = payload()
 	return render_template("index.html")
+	return result
 
 
 
