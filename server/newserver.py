@@ -27,7 +27,7 @@ def page_not_found(error):
 @app.route("/")
 def index():
 	result = payload()
-	return render_template("index.html")
+	return render_template("snake.html")
 	return result
 
 
