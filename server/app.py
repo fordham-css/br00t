@@ -8,8 +8,8 @@ app = Flask(__name__)
 app.config["DEBUG"] = True
 app.secret_key = "dev key"
 
-app.config['CELERY_BROKER_URL'] = 'http://301217b2.ngrok.com'
-app.config['CELERY_RESULT_BACKEND'] = 'http://301217b2.ngrok.com'
+app.config['CELERY_BROKER_URL'] = 'redis://localhost:6379'
+app.config['CELERY_RESULT_BACKEND'] = 'redis://localhost:6379'
 
 celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
 celery.conf.update(app.config)

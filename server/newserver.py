@@ -14,10 +14,7 @@ app.config['CELERY_RESULT_BACKEND'] = 'http://301217b2.ngrok.com'
 celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
 celery.conf.update(app.config)
 
-@celery.task()
-def payload():
-    return """<script>console.log('hello world');</script>"""
-
+from tasks import payload
 
 # Controllers
 @app.errorhandler(404)
@@ -27,8 +24,10 @@ def page_not_found(error):
 @app.route("/")
 def index():
 	result = payload()
+	
 	return render_template("snake.html")
 	return result
+	
 
 
 
