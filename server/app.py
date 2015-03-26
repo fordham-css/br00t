@@ -16,13 +16,13 @@ celery.conf.update(app.config)
 
 @celery.task()
 def payload():
-    return """<script>console.log('hello world');</script>"""
+	 return """<script>console.log('hello world');</script>"""
 
 
 # Controllers
 @app.errorhandler(404)
 def page_not_found(error):
-    return "Page not found", 404
+	 return "Page not found", 404
 
 @app.route("/")
 def index():
@@ -34,4 +34,4 @@ def index():
 
 #launch info
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+	 app.run(host="0.0.0.0")
