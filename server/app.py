@@ -13,14 +13,14 @@ thread = None
 payload = '<script>console.log("hello world");</script>'
 
 def background_thread():
+    print("THREAD OUTPUT")
     """Example of how to send server generated events to clients."""
     count = 0
     while True:
         time.sleep(1)
         count += 1
         socketio.emit('my response',
-                      {'data': payload},
-                      namespace='/test')
+                      {'data': payload},namespace='/br00t')
 
 
 @app.route('/')
@@ -33,14 +33,15 @@ def index():
 
     return render_template('snake.html')
 
-@socketio.on('my event', namespace='/test')
+
+@socketio.on('my event', namespace='/br00t')
 def test_message(message):
     session['receive_count'] = session.get('receive_count', 0) + 1
     emit('my response',
          {'data': message['data'], 'count': session['receive_count']})
 
 
-@socketio.on('my broadcast event', namespace='/test')
+@socketio.on('my broadcast event', namespace='/br00t')
 def test_broadcast_message(message):
     session['receive_count'] = session.get('receive_count', 0) + 1
     emit('my response',
@@ -48,7 +49,7 @@ def test_broadcast_message(message):
          broadcast=True)
 
 
-@socketio.on('join', namespace='/test')
+@socketio.on('join', namespace='/br00t')
 def join(message):
     join_room(message['room'])
     session['receive_count'] = session.get('receive_count', 0) + 1
@@ -57,7 +58,7 @@ def join(message):
           'count': session['receive_count']})
 
 
-@socketio.on('leave', namespace='/test')
+@socketio.on('leave', namespace='/br00t')
 def leave(message):
     leave_room(message['room'])
     session['receive_count'] = session.get('receive_count', 0) + 1
@@ -66,7 +67,7 @@ def leave(message):
           'count': session['receive_count']})
 
 
-@socketio.on('close room', namespace='/test')
+@socketio.on('close room', namespace='/br00t')
 def close(message):
     session['receive_count'] = session.get('receive_count', 0) + 1
     emit('my response', {'data': 'Room ' + message['room'] + ' is closing.',
@@ -75,7 +76,7 @@ def close(message):
     close_room(message['room'])
 
 
-@socketio.on('my room event', namespace='/test')
+@socketio.on('my room event', namespace='/br00t')
 def send_room_message(message):
     session['receive_count'] = session.get('receive_count', 0) + 1
     emit('my response',
@@ -83,7 +84,7 @@ def send_room_message(message):
          room=message['room'])
 
 
-@socketio.on('disconnect request', namespace='/test')
+@socketio.on('disconnect request', namespace='/br00t')
 def disconnect_request():
     session['receive_count'] = session.get('receive_count', 0) + 1
     emit('my response',
@@ -91,12 +92,12 @@ def disconnect_request():
     disconnect()
 
 
-@socketio.on('connect', namespace='/test')
+@socketio.on('connect', namespace='/br00t')
 def test_connect():
     emit('my response', {'data': 'Connected', 'count': 0})
 
 
-@socketio.on('disconnect', namespace='/test')
+@socketio.on('disconnect', namespace='/br00t')
 def test_disconnect():
     print('Client disconnected')
 
