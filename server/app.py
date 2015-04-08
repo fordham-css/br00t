@@ -10,15 +10,20 @@ app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 thread = None
 
-payload = '<script>console.log("hello world");</script>'
+payload = 'ping<script>console.log("hello world");</script>'
+
 
 def background_thread():
-    print("THREAD OUTPUT")
     """Example of how to send server generated events to clients."""
+    
     count = 0
     while True:
         time.sleep(1)
         count += 1
+        start = time.strftime("%X")
+        header = '<br>CLIENT @' + start + ': '
+        socketio.emit('my response',
+                      {'data': header},namespace='/br00t')
         socketio.emit('my response',
                       {'data': payload},namespace='/br00t')
 
@@ -94,7 +99,7 @@ def disconnect_request():
 
 @socketio.on('connect', namespace='/br00t')
 def test_connect():
-    emit('my response', {'data': 'Connected', 'count': 0})
+    emit('my response', {'data': 'SERVER: client connected', 'count': 0})
 
 
 @socketio.on('disconnect', namespace='/br00t')

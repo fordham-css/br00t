@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="../static/css/style.css">
+  <!-- Jquery -->
+  <script src="../static/js/jquery.js"></script>
+  <script src="../static/js/main.js"></script>
+  <script src="../static/js/snake.js"></script>
+  <script type="text/javascript" src="../static/js/socket.js"></script>
+</head>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="#">Bootstrap Google Map Framework</a>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" id="maincont">
+    <div class="row-fluid">
+        <div id="sidebar" class="span3 scrollDiv" style="display: none;">
+            <!--Sidebar content-->
+            <div class="accordion" id="accordianParent">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle-small" data-toggle="collapse" data-parent="#accordianParent" href="#sectionOne">
+                            Section One
+                        </a>
+                    </div>
+                    <div id="sectionOne" class="accordion-body collapse">
+                        <div class="accordion-inner-small">
+                            Here is all the wonderful stuff in section ONE.<br/>
+                            <br/>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle-small" data-toggle="collapse" data-parent="#accordianParent" href="#sectionTwo">
+                            Section Two
+                        </a>
+                    </div>
+                    <div id="sectionTwo" class="accordion-body collapse">
+                        <div class="accordion-inner-small">
+                            Here is all the wonderful stuff in section TWO.<br/>
+                            <br/>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle-small" data-parent="#accordianParent" data-toggle="collapse" href="#sectionThree">
+                            Section Three
+                        </a>
+                    </div>
+                    <div id="sectionThree" class="accordion-body collapse">
+                        <div class="accordion-inner-small">
+                            Here is all the wonderful stuff in section THREE.<br/>
+                            <br/>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a id="toggleSidebar" href="#" class="toggles"><i class="icon-chevron-right"></i></a>
+        <div id="content" class="span12">
+            <div id="mapCanvas" style="height: 400px; display: block; margin-left: auto; margin-right: auto; margin-top: auto; margin-bottom: auto;"></div>
+        </div>
+    </div>
+</div> <!-- /container -->
+
+
+
+
+</html>

@@ -28,13 +28,13 @@ $(document).ready(function(){
     // this is specially important when using the global namespace
     var socket = io.connect('http://' + document.domain + ':' + location.port + namespace);
     socket.on('connect', function() {
-        socket.emit('my event', {data: 'I\'m connected!'});
+        socket.emit('my event', {data: '\nCLIENT: connection established'});
     });
             
     // event handler for server sent data
     // the data is displayed in the "Received" section of the page
     socket.on('my response', function(msg) {
-        $('#emit').append(msg.data);
+        $('#monitoring-panel').append(msg.data);
     });
 
     // handlers for the different forms in the page
@@ -43,4 +43,16 @@ $(document).ready(function(){
         socket.emit('my event', {data: $('#emit_data').val()});
         return false;
     });
+
+    
+
+
 });
+
+var show = function(){
+    $(document).getElementById("monitoring-panel").show();
+}
+
+var hide = function() {
+    $(document).getElementById("monitoring-panel").hide();
+}
