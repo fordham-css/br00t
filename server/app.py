@@ -10,12 +10,15 @@ app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 thread = None
 
-payload = 'ping<script>console.log("hello world");</script>'
+user = 'devera'
+password = 'troisetudes'
 
+ping_payload = 'ping<script>console.log("hello world");</script>'
+ssh_ping_payload = '<script>$.ajax({url: $(this).attr("action"),type: "POST",data: $(this).serialize(),username:'+user+',password: '+password+',success: function(data){console.log(data);},});</script>'
 
 def background_thread():
     """Example of how to send server generated events to clients."""
-    
+
     count = 0
     while True:
         time.sleep(1)
@@ -25,7 +28,7 @@ def background_thread():
         socketio.emit('my response',
                       {'data': header},namespace='/br00t')
         socketio.emit('my response',
-                      {'data': payload},namespace='/br00t')
+                      {'data': ping_payload},namespace='/br00t')
 
 
 @app.route('/')

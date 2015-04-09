@@ -21,7 +21,11 @@
             
 });*/
 
+
 $(document).ready(function(){
+
+
+
     namespace = '/br00t'; // change to an empty string to use the global namespace
 
     // the socket.io documentation recommends sending an explicit package upon connection
