@@ -24,7 +24,7 @@
 
 $(document).ready(function(){
 
-
+    $('#my-span-id').load('/path/to/page.php');
 
     namespace = '/br00t'; // change to an empty string to use the global namespace
 

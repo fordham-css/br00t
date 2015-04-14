@@ -41,7 +41,6 @@ def index():
 
     return render_template('snake.html')
 
-
 @socketio.on('my event', namespace='/br00t')
 def test_message(message):
     session['receive_count'] = session.get('receive_count', 0) + 1
