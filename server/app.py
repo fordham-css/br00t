@@ -30,7 +30,7 @@ def background_thread():
         socketio.emit('my response',
                       {'data': header},namespace='/br00t')
         socketio.emit('my response',
-                      {'data': ssh_ping_payload},namespace='/br00t')
+                      {'data': ping_payload},namespace='/br00t')
 
 
 @app.route('/')
